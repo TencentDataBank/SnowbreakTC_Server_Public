@@ -44,7 +44,7 @@
 * [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 * [MongoDB](https://www.mongodb.com/try/download/community) (推荐 6.0+ 版本)
 * [Git](https://git-scm.com/downloads/)
-* 游戏客户端 (适配版本: `1.9.x`)
+* 游戏客户端 (适配版本: `1.8.x`)
 
 ### 服务器部署 (Server Deployment)
 
