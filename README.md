@@ -86,7 +86,7 @@
 你需要使用流量重定向工具将游戏的网络请求指向你的私服。
 
 1.  **推荐工具**: `Fiddler`, `Mitmproxy`, 或其他网络调试代理工具。
-2.  **重定向规则**: 将所有 `*.seasungames.com` (此为示例，具体域名需抓包确认) 的流量重定向至你服务器的 `PublicIp`。
+2.  **重定向规则**: 将所有 `*.seasungames.com` (此为示例，建议直接使用[专用proxy](https://github.com/TencentDataBank/STC_Proxy)) 的流量重定向至你服务器的 `PublicIp`。
 3.  启动游戏客户端。如果一切正常，你应该能够连接到你的服务器并创建账号进入游戏。
 
 ## 🤝 如何贡献 (Contributing)
