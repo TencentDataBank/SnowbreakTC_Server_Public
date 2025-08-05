@@ -44,7 +44,7 @@
 * [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 * [MongoDB](https://www.mongodb.com/try/download/community) (推荐 6.0+ 版本)
 * [Git](https://git-scm.com/downloads/)
-* 游戏客户端 (适配版本: `1.x.x`，请根据服务器实际情况填写)
+* 游戏客户端 (适配版本: `1.9.x`)
 
 ### 服务器部署 (Server Deployment)
 
@@ -106,7 +106,7 @@
 ## 💬 社区 (Community)
 
 * **Discord**: [加入我们的 Discord 服务器](https://www.bilibili.com/video/BV1GJ411x7h7)
-* **telegram 交流群**: `[点击加入](https://t.me/+NeVerGoNnAgivE–yOUUp)`
+* **telegram 交流群**: [点击加入](https://t.me/+NeVerGoNnAgivE–yOUUp)
 
 遇到问题或有任何想法，欢迎在 Issues 区提出，或加入我们的社区进行讨论。
 
