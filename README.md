@@ -23,3 +23,17 @@ dotnet build
 cp config.example.json config.json
 dotnet run --project src/SnowbreakTC.Server
 ```
+
+## 客户端接入
+
+国服：将以下域名通过 hosts 指向服务器 IP：
+
+```
+<server-ip> sh-jxsj.xgsdk.com
+<server-ip> xgdata.xgsdk.com
+<server-ip> js2sdk.xoyo.com
+<server-ip> sh-qrcode.xgsdk.com
+<server-ip> activity.xgsdk.com
+<server-ip> gpm-conf.testplus.cn
+<server-ip> cbjq-serverlist.xoyocdn.com
+```
