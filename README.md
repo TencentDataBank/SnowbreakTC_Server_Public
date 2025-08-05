@@ -15,3 +15,11 @@
 ## License
 
 AGPL-3.0
+
+## 快速开始
+
+```bash
+dotnet build
+cp config.example.json config.json
+dotnet run --project src/SnowbreakTC.Server
+```
