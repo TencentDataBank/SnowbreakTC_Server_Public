@@ -1,0 +1,26 @@
+# build artifacts
+bin/
+obj/
+out/
+publish/
+*.user
+*.suo
+
+# runtime data (never commit)
+config.json
+Data/
+logs/
+Resources/
+!src/SnowbreakTC.GameLogic/Resources/
+*.db
+*.db-shm
+*.db-wal
+
+# IDE
+.vs/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+.DS_Store
