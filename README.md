@@ -37,3 +37,7 @@ dotnet run --project src/SnowbreakTC.Server
 <server-ip> gpm-conf.testplus.cn
 <server-ip> cbjq-serverlist.xoyocdn.com
 ```
+
+## 相关文档
+
+见 docs/ 目录。
