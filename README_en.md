@@ -44,7 +44,7 @@ Before you begin, ensure you have the following prerequisites installed:
 * [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 * [MongoDB](https://www.mongodb.com/try/download/community) (Version 6.0+ recommended)
 * [Git](https://git-scm.com/downloads/)
-* Game Client (Compatible Version: `1.9.x`)
+* Game Client (Compatible Version: `1.3.2`)
 
 ### Server Deployment
 
