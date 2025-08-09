@@ -1,0 +1,26 @@
+{
+  "game": {
+    "name": "SnowbreakTC",
+    "bind": "0.0.0.0",
+    "port": 20000,
+    "public_host": "127.0.0.1",
+    "world_channel": 1,
+    "area_id": 1,
+    "timezone": 8,
+    "max_connections": 4096
+  },
+  "sdk": {
+    "bind": "0.0.0.0",
+    "port": 443,
+    "extra_tls_ports": [13443, 18443, 31443],
+    "public_host": "127.0.0.1",
+    "auto_create_account": true,
+    "cert_dir": "Data/Cert"
+  },
+  "database": {
+    "file": "Data/Database/snowbreak.db",
+    "autosave_seconds": 60
+  },
+  "resource_path": "Resources",
+  "data_path": "Data"
+}
