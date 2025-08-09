@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>SnowbreakTC.GameLogic</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnowbreakTC.Core\SnowbreakTC.Core.csproj" />
+    <ProjectReference Include="..\SnowbreakTC.Protocol\SnowbreakTC.Protocol.csproj" />
+    <ProjectReference Include="..\SnowbreakTC.Database\SnowbreakTC.Database.csproj" />
+  </ItemGroup>
+</Project>
