@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyTitle>SnowbreakTC GameLogic</AssemblyTitle>
+    <AssemblyDescription>Game logic and business rules for SnowbreakTC Server</AssemblyDescription>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SnowbreakTC.Core\SnowbreakTC.Core.csproj" />
+    <ProjectReference Include="..\SnowbreakTC.Database\SnowbreakTC.Database.csproj" />
+    <ProjectReference Include="..\SnowbreakTC.Protocol\SnowbreakTC.Protocol.csproj" />
+  </ItemGroup>
+
+</Project>
