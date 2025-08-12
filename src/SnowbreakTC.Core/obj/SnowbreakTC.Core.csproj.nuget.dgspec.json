@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj": {}
+    "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj": {
+    "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj",
+        "projectUniqueName": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj",
         "projectName": "SnowbreakTC.Core",
-        "projectPath": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj",
-        "packagesPath": "C:\\Users\\王小明\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\obj\\",
+        "projectPath": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj",
+        "packagesPath": "C:\\Users\\COLA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\王小明\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\COLA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

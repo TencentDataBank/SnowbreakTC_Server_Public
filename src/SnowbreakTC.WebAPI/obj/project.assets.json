@@ -2663,19 +2663,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\王小明\\.nuget\\packages\\": {}
+    "C:\\Users\\COLA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.WebAPI\\SnowbreakTC.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.WebAPI\\SnowbreakTC.WebAPI.csproj",
       "projectName": "SnowbreakTC.WebAPI",
-      "projectPath": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.WebAPI\\SnowbreakTC.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\王小明\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.WebAPI\\obj\\",
+      "projectPath": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.WebAPI\\SnowbreakTC.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\COLA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\王小明\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\COLA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2689,14 +2689,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj": {
-              "projectPath": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj"
+            "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj": {
+              "projectPath": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Core\\SnowbreakTC.Core.csproj"
             },
-            "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Database\\SnowbreakTC.Database.csproj": {
-              "projectPath": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Database\\SnowbreakTC.Database.csproj"
+            "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Database\\SnowbreakTC.Database.csproj": {
+              "projectPath": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.Database\\SnowbreakTC.Database.csproj"
             },
-            "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.GameLogic\\SnowbreakTC.GameLogic.csproj": {
-              "projectPath": "C:\\Users\\王小明\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.GameLogic\\SnowbreakTC.GameLogic.csproj"
+            "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.GameLogic\\SnowbreakTC.GameLogic.csproj": {
+              "projectPath": "C:\\Users\\COLA\\Downloads\\SnowbreakTC_Server_Public-main\\src\\SnowbreakTC.GameLogic\\SnowbreakTC.GameLogic.csproj"
             }
           }
         }

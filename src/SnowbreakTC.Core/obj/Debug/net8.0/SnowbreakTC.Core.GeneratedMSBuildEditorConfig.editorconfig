@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SnowbreakTC.Core
-build_property.ProjectDir = C:\Users\王小明\Downloads\SnowbreakTC_Server_Public-main\src\SnowbreakTC.Core\
+build_property.ProjectDir = D:\UGit\SnowbreakTC_Server_Public\src\SnowbreakTC.Core\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SnowbreakTC.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfd6b1086d8b7057c609590c775fa2e93cda9dc1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SnowbreakTC.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SnowbreakTC.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
