@@ -101,6 +101,9 @@ public static class AdminHost
             _ when path.StartsWith("/api/accounts/") && ctx.Request.Method == "DELETE" => DeleteAccount(ctx, db),
             "/api/currencies" => Currencies(db),
             "/api/commands" => Commands(),
+            "/api/setup" => Setup(ctx, config),
+            "/api/setup/apply" when ctx.Request.Method == "POST" => SetupApply(ctx),
+            "/api/replay" => Replay(ctx),
             "/api/online" => Online(game),
             _ when path.StartsWith("/api/players/") => Player(ctx, db, game),
             _ when path.StartsWith("/api/kick/") => Kick(ctx, game),
@@ -262,6 +265,72 @@ public static class AdminHost
             ? game.GiveToOne(tu, template, count)
             : game.GiveToAll(template, count);
         return new Dictionary<string, object?> { ["template"] = template, ["count"] = count, ["given_to"] = given };
+    }
+
+    private static readonly string[] CnDomains =
+    [
+        "sh-jxsj.xgsdk.com", "xgdata.xgsdk.com", "js2sdk.xoyo.com", "sh-qrcode.xgsdk.com",
+        "activity.xgsdk.com", "gpm-conf.testplus.cn", "cbjq-serverlist.xoyocdn.com",
+    ];
+
+    private static object Setup(HttpContext ctx, AppConfig config)
+    {
+        var hosts = new List<string>();
+        var hostsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "System32", "drivers", "etc", "hosts");
+        if (File.Exists(hostsPath))
+        {
+            foreach (var line in File.ReadAllLines(hostsPath))
+            {
+                if (line.Contains("SNOWBREAKTC") || line.Contains("snowbreaktc"))
+                    hosts.Add(line);
+            }
+        }
+        var addresses = System.Net.Dns.GetHostAddresses(System.Net.Dns.GetHostName())
+            .Where(a => a.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            .Select(a => a.ToString())
+            .ToList();
+        return new Dictionary<string, object?>
+        {
+            ["region"] = ctx.Request.Query["region"].FirstOrDefault() ?? "cn",
+            ["regions"] = new[]
+            {
+                new Dictionary<string, object?> { ["id"] = "cn", ["loader"] = "hosts", ["note"] = "CN: client starts normally, 7 SDK domains are pointed to this server via hosts" },
+                new Dictionary<string, object?> { ["id"] = "global", ["loader"] = "proxy", ["note"] = "Global: redirect oversea domains to this server" },
+            },
+            ["public_address"] = config.Sdk.PublicHost,
+            ["game_public_address"] = config.Game.PublicHost,
+            ["ports"] = new Dictionary<string, object?>
+            {
+                ["http"] = config.Sdk.Port,
+                ["game"] = config.Game.Port,
+                ["admin"] = config.Admin.Port,
+            },
+            ["addresses"] = addresses,
+            ["hosts"] = hosts,
+            ["cn_domains"] = CnDomains,
+            ["global_domains"] = new[]
+            {
+                "amazingseasuncdn.com", "amazingseasun.com", "seasungames.com", "snowbreak-game.com",
+                "xgsdk.com", "xoyo.games", "qcloud.com", "tencentcs.com",
+            },
+        };
+    }
+
+    private static object SetupApply(HttpContext ctx) => new Dictionary<string, object?>
+    {
+        ["accepted"] = true,
+        ["note"] = "hosts redirection must be applied manually with administrator rights; see README client guide",
+    };
+
+    private static object Replay(HttpContext ctx)
+    {
+        var lang = ctx.Request.Query["lang"].FirstOrDefault();
+        return new Dictionary<string, object?>
+        {
+            ["lang"] = lang ?? "zh-CN",
+            ["eras"] = Array.Empty<object>(),
+            ["current"] = null,
+        };
     }
 
     private static async Task Console_(HttpContext ctx, Func<string, GmResult>? gmRun)
