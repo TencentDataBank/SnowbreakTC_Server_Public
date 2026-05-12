@@ -9,8 +9,8 @@ public static class JinshanRoutes
 {
     public const string ChannelId = "pc_jinshan";
     public const string PlanId = "30006";
-    public const string SdkVersion = "5.2.0";
-    public const string ListVersion = "3.1.0";
+    public const string SdkVersion = "5.3.6";
+    public const string ListVersion = "3.6.0";
 
     public static bool Match(string path)
     {
