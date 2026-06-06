@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SnowbreakTC 管理面板</title>
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">STC</div>
+        <div>
+          <div class="brand-title" id="brand-name">SnowbreakTC</div>
+          <div class="brand-sub" id="brand-status">连接中...</div>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <button class="nav-btn active" data-tab="overview">概览</button>
+        <button class="nav-btn" data-tab="accounts">账号与玩家</button>
+        <button class="nav-btn" data-tab="grant">物品与发放</button>
+        <button class="nav-btn" data-tab="console">GM 控制台</button>
+        <button class="nav-btn" data-tab="setup">接入与网络</button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <label class="auto-refresh">
+          <input type="checkbox" id="auto-refresh" checked />
+          <span>自动刷新 (5s)</span>
+        </label>
+        <button class="btn ghost small hidden" id="btn-logout">清除 Token</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h1 id="page-title">概览</h1>
+        <div class="topbar-actions">
+          <button class="btn secondary" id="btn-save-all">立即存盘</button>
+          <button class="btn" id="btn-refresh">刷新</button>
+        </div>
+      </header>
+
+      <section class="panel active" id="tab-overview">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">在线玩家</div>
+            <div class="stat-value accent" id="stat-online">-</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">注册账号</div>
+            <div class="stat-value" id="stat-accounts">-</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">已注册路由</div>
+            <div class="stat-value" id="stat-apis">-</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">运行时长</div>
+            <div class="stat-value mono" id="stat-uptime">-</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>当前在线玩家</h2>
+            <span class="muted" id="online-summary">0 人在线</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>UID</th>
+                  <th>昵称</th>
+                  <th>等级</th>
+                  <th class="right">操作</th>
+                </tr>
+              </thead>
+              <tbody id="online-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="tab-accounts">
+        <div class="toolbar">
+          <form class="inline-form" id="form-search">
+            <input type="text" id="search-q" placeholder="搜索邮箱或昵称..." />
+            <button type="submit" class="btn secondary">搜索</button>
+          </form>
+          <form class="inline-form" id="form-create-account">
+            <input type="text" id="new-email" placeholder="输入邮箱或账号名创建" required />
+            <button type="submit" class="btn">新建账号</button>
+          </form>
+        </div>
+
+        <div class="split">
+          <div class="card">
+            <div class="card-head">
+              <h2>账号列表</h2>
+              <span class="muted" id="accounts-count">0 条</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>UID</th>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>等级</th>
+                    <th>创建时间</th>
+                    <th class="right">操作</th>
+                  </tr>
+                </thead>
+                <tbody id="accounts-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card" id="player-detail-card">
+            <div class="card-head">
+              <h2>玩家详情</h2>
+              <span class="badge hidden" id="detail-status">离线</span>
+            </div>
+            <div id="player-detail-body" class="muted">点击左侧任意账号查看详情与货币数据。</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="tab-grant">
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-head">
+              <h2>按模板发放物品</h2>
+              <span class="muted">通过 /api/give 下发</span>
+            </div>
+            <form class="stack-form" id="form-give">
+              <div class="field-row">
+                <label>物品大类 (Genre)
+                  <select id="give-genre">
+                    <option value="1">1 - 角色卡 (Card)</option>
+                    <option value="2">2 - 武器 (Weapon)</option>
+                    <option value="3">3 - 后勤/支援卡 (Support)</option>
+                    <option value="4" selected>4 - 消耗品 (Usable)</option>
+                    <option value="5">5 - 材料/补给 (Supplies)</option>
+                    <option value="7">7 - 角色皮肤 (CardSkin)</option>
+                    <option value="17">17 - 武器皮肤 (WeaponSkin)</option>
+                  </select>
+                </label>
+                <label>目标 UID（留空则发全部在线）
+                  <input type="number" id="give-uid" min="1" placeholder="全部在线玩家" />
+                </label>
+              </div>
+              <div class="field-row">
+                <label>Detail
+                  <input type="number" id="give-detail" min="0" value="1" required />
+                </label>
+                <label>Particular
+                  <input type="number" id="give-particular" min="0" value="1" required />
+                </label>
+                <label>数量
+                  <input type="number" id="give-count" min="1" value="1" required />
+                </label>
+              </div>
+              <button type="submit" class="btn">发送物品</button>
+            </form>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h2>快捷 GM 发放</h2>
+              <span class="muted">作用于当前在线玩家</span>
+            </div>
+            <div class="stack-form">
+              <form class="inline-form" id="form-gm-money">
+                <input type="number" id="gm-money-type" min="0" value="3" placeholder="货币类型" required />
+                <input type="number" id="gm-money-val" min="0" value="1000000" placeholder="数量" required />
+                <button type="submit" class="btn secondary">设置货币</button>
+              </form>
+              <form class="inline-form" id="form-gm-level">
+                <input type="number" id="gm-level-val" min="1" max="80" value="80" placeholder="等级 (1-80)" required />
+                <button type="submit" class="btn secondary">设置等级</button>
+              </form>
+              <form class="inline-form" id="form-gm-mail">
+                <input type="text" id="gm-mail-title" placeholder="全服在线邮件标题" required />
+                <button type="submit" class="btn secondary">发送邮件</button>
+              </form>
+              <div class="btn-row">
+                <button type="button" class="btn secondary" data-gm="grant allcards">解锁全角色</button>
+                <button type="button" class="btn secondary" data-gm="grant allweapons">解锁全武器</button>
+                <button type="button" class="btn secondary" data-gm="data progress on">开启全关卡进度</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="tab-console">
+        <div class="card console-card">
+          <div class="card-head">
+            <h2>GM 控制台</h2>
+            <button class="btn ghost small" id="btn-clear-log">清空输出</button>
+          </div>
+          <div class="console-log" id="console-log"></div>
+          <form class="console-input" id="form-console">
+            <span class="prompt">&gt;</span>
+            <input type="text" id="console-cmd" placeholder="输入 GM 命令，例如 help、player list、server stats..." autocomplete="off" />
+            <button type="submit" class="btn">执行</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>命令参考</h2>
+            <span class="muted">点击可填入控制台</span>
+          </div>
+          <div class="cmd-grid" id="cmd-list"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="tab-setup">
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-head">
+              <h2>监听端口与本机地址</h2>
+            </div>
+            <div id="setup-ports" class="kv-list"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h2>国服 hosts 重定向</h2>
+              <div class="btn-row">
+                <button class="btn small secondary" id="btn-redirect-status">状态</button>
+                <button class="btn small" id="btn-redirect-on">写入 hosts</button>
+                <button class="btn small danger" id="btn-redirect-off">清除</button>
+              </div>
+            </div>
+            <p class="muted" id="hosts-state-note">读取中...</p>
+            <pre class="code-box" id="hosts-preview"></pre>
+            <button class="btn secondary small" id="btn-copy-hosts">复制 hosts 内容</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <h2>国际服代理域名</h2>
+            <span class="muted">需配合流量代理指向 SDK 端口</span>
+          </div>
+          <div class="tag-list" id="global-domains"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="auth-modal">
+    <div class="modal-card">
+      <h2>需要管理员 Token</h2>
+      <p class="muted">当前管理接口启用了 `admin.token` 鉴权，请输入配置中的令牌以继续。</p>
+      <form id="form-auth" class="stack-form">
+        <input type="password" id="auth-token-input" placeholder="Bearer Token" required />
+        <div class="error-text hidden" id="auth-error">Token 无效，请重试。</div>
+        <button type="submit" class="btn">验证进入</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toast-wrap"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
