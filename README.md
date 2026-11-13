@@ -6,7 +6,7 @@
 [![Discord](https://img.shields.io/discord/1474707499511840890.svg?logo=discord&color=7289DA)](https://discord.com/invite/fTJsUZK3JE)
 
 #### 原始文档
-[简体中文](./README_cn.md.md) | [English](./README_en.md)
+[简体中文](./README_cn.md) | [English](./README_en.md)
 
 
 ---
