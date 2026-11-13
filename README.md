@@ -1,5 +1,9 @@
 # SnowbreakTC Server
 
+[![build](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/TencentDataBank/SnowbreakTC_Server/actions)
+[![license](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](https://github.com/TencentDataBank/SnowbreakTC_Server/blob/main/LICENSE)
+[![Discord](https://img.shields.io/discord/1474707499511840890.svg?logo=discord&color=7289DA)](https://discord.com/invite/fTJsUZK3JE)
+
 [简体中文](./README.md) | [English](./README_en.md)
 
 一个用于学习与研究《尘白禁区》(Snowbreak: Containment Zone) 服务端实现的开源模拟器项目，基于 .NET 8 编写。
@@ -109,6 +113,29 @@ grant card <detail> <part>    # 为在线玩家发放角色
 mail <title>                  # 向在线玩家发送邮件
 server save                   # 立即保存所有在线玩家数据
 ```
+## 🤝 如何贡献 (Contributing)
+
+我们欢迎任何形式的贡献，无论是代码、文档还是问题报告！
+
+如果你想贡献代码，请遵循以下步骤：
+
+1.  **Fork** 本仓库。
+2.  创建一个新的分支 (`git checkout -b feature/your-feature-name`)。
+3.  进行修改并提交 (`git commit -m 'Add some amazing feature'`)。
+4.  将你的分支推送到你的 Fork (`git push origin feature/your-feature-name`)。
+5.  创建一个 **Pull Request**。
+
+请确保你的代码遵循项目现有的编码风格，并提供清晰的注释和提交信息。
+
+## 💬 社区 (Community)
+
+* **Discord**: [加入我们的 Discord 服务器](https://discord.com/invite/fTJsUZK3JE)
+
+遇到问题或有任何想法，欢迎在 Issues 区提出，或加入我们的社区进行讨论。
+
+## 🙏 致谢 (Acknowledgements)
+
+* 感谢老己
 
 ## 相关文档
 
